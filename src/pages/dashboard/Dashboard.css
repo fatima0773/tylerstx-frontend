@@ -1,0 +1,275 @@
+.layout {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: "Rubik", sans-serif;
+  min-width: 100vw;
+  padding: 0;
+}
+
+.banner-image {
+  background-image: url("https://i.shgcdn.com/1fcfcbd6-96b3-4945-a9cd-15fba7169485/-/format/auto/-/preview/3000x3000/-/quality/lighter/");
+  height: 65vh;
+  background-size: contain;
+  width: 100vw;
+  justify-content: flex-start;
+  display: flex;
+  align-items: flex-end;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.banner-heading-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+  text-decoration: none;
+}
+
+.banner-heading {
+  color: white;
+  font-size: 60px;
+  font-family: "Rubik", sans-serif;
+  text-align: left;
+  font-weight: bold;
+  margin: 0;
+  text-decoration: none;
+}
+
+.banner-subheading {
+  color: white;
+  font-size: 19px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.banner-section {
+  width: 100%;
+  background-color: red;
+}
+
+.shop-levis-button {
+  width: 290px;
+  height: 70px;
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+  font-size: 19px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 10px;
+  transition: all 0.3s;
+  cursor: pointer;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.1);
+  /* Linear gradient background */
+  background-image: linear-gradient(
+    to bottom,
+    rgb(240, 159, 202),
+    rgb(177, 177, 241)
+  );
+  text-decoration: none;
+}
+
+.shop-levis-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(
+    to top,
+    rgb(240, 159, 202),
+    rgb(177, 177, 241)
+  );
+}
+
+.brands-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* width: 100vw; */
+  /* background-color: red; */
+}
+
+.heading-container {
+  width: 100%;
+}
+
+.heading {
+  color: #c62032;
+  font-size: 35px;
+  font-family: "Rubik", sans-serif;
+  margin-left: 65px;
+  text-align: left;
+}
+
+.brands-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  width: 90vw;
+}
+
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+}
+
+.brands-section-card {
+  text-decoration: none;
+}
+
+.brands-section-img {
+  width: 90%;
+  height: auto; /* Maintain aspect ratio */
+  border: 1px solid #ccc;
+  margin: 5px; /* Adjust margin as needed */
+  border-radius: 10px;
+}
+
+.brands-section-card:hover {
+  transform: scale(1.05);
+}
+
+.brands-section-card:hover:after {
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  transform: scale(1);
+}
+
+.sports-card {
+  width: 48%;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.sports-card:hover {
+  transform: scale(1.05);
+}
+
+.sports-card:hover:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  transform: scale(1);
+}
+
+.backpack-slider {
+  justify-content: flex-start;
+  padding: 20px;
+  width: 90vw;
+  margin: 20px 0;
+}
+
+.men-clothing-card {
+  background-image: url("https://i.shgcdn.com/c9f29eac-186f-465c-b976-b37414f47851/-/format/auto/-/preview/3000x3000/-/quality/lighter/");
+}
+
+.women-clothing-card {
+  background-image: url("https://i.shgcdn.com/891999a1-0210-4e7f-b986-20ed2032d32a/-/format/auto/-/preview/3000x3000/-/quality/lighter/");
+}
+
+.kids-clothing-card {
+  background-image: url("https://i.shgcdn.com/4939f5ec-ae87-445c-b58d-b011e2b91e34/-/format/auto/-/preview/3000x3000/-/quality/lighter/");
+}
+
+.women-clothing-card,
+.men-clothing-card,
+.kids-clothing-card {
+  height: 30vh;
+  background-size: cover;
+  width: 33%;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.men-clothing-card:hover,
+.women-clothing-card:hover,
+.kids-clothing-card:hover {
+  transform: scale(1.05);
+}
+
+.category-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  margin: 40px 0;
+}
+
+.tee-card {
+  width: 21%;
+  border-radius: 10px;
+  margin: 10px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.tee-card:hover {
+  transform: scale(1.05);
+}
+
+.tee-card:hover:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  transform: scale(1);
+}
+
+.about-card {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  color: black;
+  font-family: "Rubik", sans-serif;
+  flex-direction: column;
+  text-align: justify;
+  font-size: 15px;
+}
+
+.about-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+
+.separator {
+  border: 1px solid #ccc;
+  width: 70%;
+  margin: 10px 0;
+}
+
+.about-heading {
+  color: #c62032;
+  font-size: 35px;
+  font-family: "Rubik", sans-serif;
+}
+
+.trending-tile {
+}
+
+.trending-img {
+  border-radius: 20px;
+  width: 90%;
+}
