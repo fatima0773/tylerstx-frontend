@@ -23,7 +23,6 @@ import Divider from "@mui/material/Divider";
 import FastForwardSharpIcon from "@mui/icons-material/FastForwardSharp";
 import LocalShippingSharpIcon from "@mui/icons-material/LocalShippingSharp";
 import ShoppingBagSharpIcon from "@mui/icons-material/ShoppingBagSharp";
-import Popover from "@mui/material/Popover";
 
 import { Button, Link, Typography } from "@mui/material";
 import Cookies from "js-cookie";
@@ -33,7 +32,6 @@ import SignIn from "../../pages/auth/signin/SignIn";
 import "./Navbar.css";
 import Modal from "@mui/material/Modal";
 import CartView from "../CartView/CartView";
-import { HiLightningBolt } from "react-icons/hi";
 
 // Search Component
 const Search = styled("div")(({ theme }) => ({
@@ -111,9 +109,11 @@ const Navbar = () => {
   const [showSignUpPopup, setShowSignUpPopUp] = useState(false);
   const [showSignInPopup, setShowSignInPopUp] = useState(false);
   const [cartPopoverAnchorEl, setCartPopoverAnchorEl] = useState(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [openCheckout, setOpenCheckout] = useState(false);
-
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleCheckoutOpen = () => setOpenCheckout(true);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleCheckoutClose = () => {
     setOpenCheckout(false);
   };

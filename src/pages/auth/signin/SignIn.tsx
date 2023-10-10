@@ -2,13 +2,11 @@
 import { useEffect, useState } from "react";
 
 // Material UI Imports
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 // Styles Imports
 import "./SignIn.css";

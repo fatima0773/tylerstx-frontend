@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import {
   CardNumberElement,
@@ -86,22 +87,6 @@ const PaymentForm: React.FC = () => {
         setErrMsg(paymentMethodResult.error.message || 'Please fill all payment fields')
         return;
       }
-
-      // // Make a request to your backend to process the payment
-      const paymentResponse = await fetch(
-        `${REACT_APP_API_URL}checkout/process-payment`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            paymentMethodId: paymentMethodResult.paymentMethod?.id,
-            amount: cartData?.totalAmount,
-          }),
-        }
-      );
-
     } catch (error) {
       console.error("Error:", error);
     }

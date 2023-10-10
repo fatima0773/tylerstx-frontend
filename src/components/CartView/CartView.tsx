@@ -3,7 +3,7 @@ import "./CartView.css";
 // HiLightningBolt
 import { HiLightningBolt } from "react-icons/hi";
 import { useEffect, useState } from "react";
-import { Box, Menu, Modal } from "@mui/material";
+import { Box, Modal } from "@mui/material";
 import OrderSummary from "../OrderSummary/OrderSummary";
 import CheckoutContainer from "../CheckoutContainer/CheckoutContainer";
 import Cookies from "js-cookie";
@@ -66,6 +66,7 @@ const CartView = () => {
   };
   useEffect(() => {
     getCart();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cartData]);
 
   return (

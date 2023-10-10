@@ -6,8 +6,6 @@ import { Alert, Button, Snackbar } from "@mui/material";
 import { getProductById } from "../../services/product.services";
 import Cookies from "js-cookie";
 import axios from "axios";
-import { addProductToCart } from "../../services/cart.services";
-import { REACT_APP_API_URL } from "../../config/config";
 
 interface IProduct {
   tags: any;
@@ -44,7 +42,7 @@ const ProductDetails = () => {
   const { productId } = useParams();
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState("");
-  const authState = Cookies.get("authState");
+  // const authState = Cookies.get("authState");
   const userId = Cookies.get("userId");
   const [success, setSuccess] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
@@ -125,7 +123,7 @@ const ProductDetails = () => {
     if (selectedImage === "" && product && product.variants[0].image[0]) {
       setSelectedImage(product.variants[0].image[0]);
     }
-  }, [product]);
+  }, [product, selectedImage]);
 
 
   const handleErrorClose = (

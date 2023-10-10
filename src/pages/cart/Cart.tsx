@@ -11,12 +11,9 @@ import {
   Box,
 } from "@mui/material";
 import "./Cart.css";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { HiLightningBolt } from "react-icons/hi";
 import paymentMethoOptions from "../../assets/images/Screenshot 2023-08-31 at 4.11.23 PM.png";
-import axios from "axios";
 import Cookies from "js-cookie";
 import { fetchCart, removeItemFromCart } from "../../services/cart.services";
 import CheckoutContainer from "../../components/CheckoutContainer/CheckoutContainer";
@@ -55,7 +52,6 @@ const style = {
 
 const Cart = () => {
   const [cartData, setCartData] = useState<ICart>();
-  const [quantity, setQuantity] = useState(1);
   const [isSizeDialogOpen, setIsSizeDialogOpen] = useState(false);
   const [isShippingInfo, setIsShippingInfo] = useState(false);
   const [isCoupon, setIsCoupon] = useState(false);
@@ -86,6 +82,7 @@ const Cart = () => {
   };
   useEffect(() => {
     getCart();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cartData]);
   // Handlers
   const handleShippingInfoSubmit = () => {
@@ -114,54 +111,6 @@ const Cart = () => {
     }
   };
 
-  const handleIncrement = (productId: string, currentQuantity: number) => {
-    const newQuantity = currentQuantity + 1;
-    updateCartItemQuantity(productId, newQuantity);
-  };
-
-  const handleDecrement = (productId: string, currentQuantity: number) => {
-    if (currentQuantity > 1) {
-      const newQuantity = currentQuantity - 1;
-      updateCartItemQuantity(productId, newQuantity);
-    }
-  };
-
-  const updateCartItemQuantity = (productId: string, newQuantity: number) => {
-    const updatedCartData = cartData;
-
-    if (updatedCartData) {
-      // Find the index of the product in the cart
-      const productIndex = updatedCartData.items.findIndex(
-        (item) => item.productId === productId
-      );
-
-      if (productIndex !== -1) {
-        // Update the quantity and total amount
-        const product = updatedCartData.items[productIndex];
-        updatedCartData.totalAmount -= product.price * product.quantity;
-        product.quantity = newQuantity;
-        updatedCartData.totalAmount += product.price * newQuantity;
-
-        // Send API request to update the cart
-        axios
-          .put(`/api/update-cart/${userId}`, {
-            productId: product.productId,
-            productName: product.productName,
-            price: product.price,
-            quantity: newQuantity,
-            image: product.image,
-          })
-          .then((response) => {
-            if (response.status === 200) {
-              setCartData(updatedCartData);
-            }
-          })
-          .catch((error) => {
-            console.error("Error updating cart item quantity:", error);
-          });
-      }
-    }
-  };
 
   const handleSizeChange = () => {
     setIsSizeDialogOpen(true);

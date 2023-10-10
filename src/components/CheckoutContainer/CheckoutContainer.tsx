@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
-import { Alert, Button, CircularProgress, Radio, Snackbar, TextField, TextareaAutosize } from "@mui/material";
+import { Alert, Button, Radio, Snackbar, TextField, TextareaAutosize } from "@mui/material";
 import "./CheckoutContainer.css";
 import LinearProgress, {
   linearProgressClasses,
@@ -102,6 +103,7 @@ const CheckoutContainer = () => {
         setIsLoadingShippingDetails(false);
         // Handle any error (e.g., show an error message)
       });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
   const handleShippingClick = () => {

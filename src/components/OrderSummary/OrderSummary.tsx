@@ -1,9 +1,6 @@
-import { Link } from "react-router-dom";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import "./OrderSummary.css";
-// HiLightningBolt
-import { HiLightningBolt } from "react-icons/hi";
 import { useEffect, useState } from "react";
-import { Box, Menu, Modal } from "@mui/material";
 import { fetchCart } from "../../services/cart.services";
 import Cookies from "js-cookie";
 
@@ -40,6 +37,7 @@ const OrderSummary = () => {
   };
   useEffect(() => {
     getCart();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cartData]);
   return (
     <div className="cart-view-container">
